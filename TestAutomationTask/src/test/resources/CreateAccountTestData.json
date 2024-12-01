@@ -1,0 +1,8 @@
+{
+	"firstName": "Test",
+	"lastName": "Test",
+	"email": "test",
+	"password": "Start1234",
+	"confirmPassword": "Start1234",
+	"successMessage": "Thank you for registering with Main Website Store."
+}

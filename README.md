@@ -12,4 +12,4 @@
       - **WebTests**: Include all the classes that automate web scenario
       - **resources**: For each test class, there is a corresponding Test Data json file.
   - **README.md**: This file, which provides an overview of the project
-  - **pom.xml**: Dependency management files for Java (Maven) or Python (pip).
+  - **pom.xml**: Dependency management files for Java (Maven).

@@ -1,0 +1,15 @@
+ **Root**
+  - **src**
+    - **main**
+      - **base**: Include base class for setting up and flush extent report
+      - **pageObjects**: Include page classes(locators and their actions)
+      - **utils**: Utility classes( ElementActions, BrowserFactory, JsonFileManger,..)
+      - **api.endpoints**: Include classes: get/post request and routes.
+      - **api.payload**: Include pojo class(Post.class)
+      - **resources**: include properties file
+    - **test**
+      - **APITests**: Include all the classes that automate API scenarios
+      - **WebTests**: Include all the classes that automate web scenario
+      - **resources**: For each test class, there is a corresponding Test Data json file.
+  - **README.md**: This file, which provides an overview of the project
+  - **pom.xml**: Dependency management files for Java (Maven).

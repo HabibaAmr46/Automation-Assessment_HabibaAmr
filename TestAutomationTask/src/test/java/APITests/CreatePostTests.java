@@ -24,10 +24,13 @@ public class CreatePostTests extends TestBase {
 		String title=JsonFileManager.getJsonValue(testData, "title");
 		String body=JsonFileManager.getJsonValue(testData, "body");
 		
-		Post payload=new Post();
-		payload.setUserId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
-			.setTitle(title)
-			.setBody(body);
+		Post payload=Post.builder().
+				userId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
+				.title(title)
+				.body(body).build();
+		
+		
+		
 		ExtentReportManager.info("Perform Post Request");	
 		Response createPostResponse = PostEndPoints.createPost(payload);
 		
@@ -46,10 +49,9 @@ public class CreatePostTests extends TestBase {
 
 		ExtentReportManager.createTest("API: Test Create Post with missing title");
 		
-		Post payload=new Post();
-		payload.setUserId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
-			.setBody(JsonFileManager.getJsonValue(testData, "body"));
-		
+		Post payload=Post.builder().
+				userId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
+				.body(JsonFileManager.getJsonValue(testData, "body")).build();
 		ExtentReportManager.info("Peform post request");
 		Response createPostResponse = PostEndPoints.createPost(payload);
 		
@@ -62,10 +64,10 @@ public class CreatePostTests extends TestBase {
 	public void createPostWithEmptyBody() {
 
 		ExtentReportManager.createTest("API: Test Create Post with empty body");
-		Post payload=new Post();
-		payload.setUserId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
-			.setTitle(JsonFileManager.getJsonValue(testData, "title"))
-			.setBody("");
+		Post payload=Post.builder().
+				userId(Integer.valueOf(JsonFileManager.getJsonValue(testData, "userId")))
+				.title(JsonFileManager.getJsonValue(testData, "title"))
+				.body("").build();
 		
 		
 		ExtentReportManager.info("Perform Post Request");
